@@ -12,7 +12,7 @@
 
 + (void)setUserIdentity:(NSString *_Nullable)objc;
 + (nullable id)getUserIdentity;
-+ (nullable instancetype)theCUserDefaults;
++ (nullable instancetype)theUserDefaults;
 
 + (void)setUserFirstLaunch;
 + (BOOL)isUserFirstLaunch;

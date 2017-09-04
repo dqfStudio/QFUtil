@@ -8,9 +8,9 @@
 
 #import "NSUserDefaultsUtil.h"
 
-#define KUserDefaultsKey       @"user_defaults_id"
-#define KUserFirstLaunchKey    @"user_first_launch"
-#define KUserLoginKey          @"user_login"
+#define KUserDefaultsKey       @"ud_user_defaults_id"
+#define KUserFirstLaunchKey    @"ud_user_first_launch"
+#define KUserLoginKey          @"ud_user_login"
 
 @implementation NSUserDefaults (Util)
 
@@ -24,7 +24,7 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:KUserDefaultsKey];
 }
 
-+ (nullable instancetype)theCUserDefaults {
++ (nullable instancetype)theUserDefaults {
     NSString *userKey = [[NSUserDefaults standardUserDefaults] objectForKey:KUserDefaultsKey];
     if (userKey) {
         return [[NSUserDefaults alloc] initWithSuiteName:userKey];
@@ -33,23 +33,23 @@
 }
 
 + (void)setUserFirstLaunch {
-    [[NSUserDefaults theCUserDefaults] setBool:YES forKey:KUserFirstLaunchKey];
+    [[NSUserDefaults theUserDefaults] setBool:YES forKey:KUserFirstLaunchKey];
 }
 
 + (BOOL)isUserFirstLaunch {
-    return [[NSUserDefaults theCUserDefaults] boolForKey:KUserFirstLaunchKey];
+    return [[NSUserDefaults theUserDefaults] boolForKey:KUserFirstLaunchKey];
 }
 
 + (void)setUserLogin {
-    [[NSUserDefaults theCUserDefaults] setBool:YES forKey:KUserLoginKey];
+    [[NSUserDefaults theUserDefaults] setBool:YES forKey:KUserLoginKey];
 }
 
 + (void)setUserLogout {
-    [[NSUserDefaults theCUserDefaults] setBool:NO forKey:KUserLoginKey];
+    [[NSUserDefaults theUserDefaults] setBool:NO forKey:KUserLoginKey];
 }
 
 + (BOOL)isUserLogIn {
-    return [[NSUserDefaults theCUserDefaults] boolForKey:KUserLoginKey];
+    return [[NSUserDefaults theUserDefaults] boolForKey:KUserLoginKey];
 }
 
 @end
