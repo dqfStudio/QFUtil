@@ -48,7 +48,7 @@
     [[NSUserDefaults theUserDefaults] setBool:NO forKey:KUserLoginKey];
 }
 
-+ (BOOL)isUserLogIn {
++ (BOOL)isUserLogin {
     return [[NSUserDefaults theUserDefaults] boolForKey:KUserLoginKey];
 }
 

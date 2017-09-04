@@ -19,6 +19,6 @@
 
 + (void)setUserLogin;
 + (void)setUserLogout;
-+ (BOOL)isUserLogIn;
++ (BOOL)isUserLogin;
 
 @end
