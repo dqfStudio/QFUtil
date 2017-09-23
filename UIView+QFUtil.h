@@ -49,4 +49,18 @@
 
 - (void)addTarget:(id)target action:(SEL)action;
 
+
+
+@property (nonatomic, readwrite) CGFloat cornerRadius;
+
+//设置视图上边角幅度
+- (void)setCornerOnTop;
+//设置视图下边角幅度
+- (void)setCornerOnBottom;
+//设置指定角的角幅度
+- (void)setGivenCorner:(UIRectCorner)corners;
+//设置视图所有角幅度
+- (void)setAllCorner;
+//去掉视图所有角幅度
+- (void)setNoneCorner;
 @end

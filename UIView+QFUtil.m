@@ -167,4 +167,50 @@ static const void *userInfoAddress = &userInfoAddress;
     [self addGestureRecognizer:tapGesture];
 }
 
+
+
+
+
+- (CGFloat)cornerRadius {
+    return [objc_getAssociatedObject(self, _cmd) floatValue];
+}
+- (void)setCornerRadius:(CGFloat)cornerRadius {
+    objc_setAssociatedObject(self, @selector(cornerRadius), @(cornerRadius), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+//设置视图上边角幅度
+- (void)setCornerOnTop {
+    [self setGivenCorner:(UIRectCornerTopLeft | UIRectCornerTopRight)];
+}
+//设置视图下边角幅度
+- (void)setCornerOnBottom {
+    [self setGivenCorner:(UIRectCornerBottomLeft | UIRectCornerBottomRight)];
+}
+//设置指定角的角幅度
+- (void)setGivenCorner:(UIRectCorner)corners {
+    UIBezierPath *maskPath = nil;
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                     byRoundingCorners:corners
+                                           cornerRadii:CGSizeMake(self.cornerRadius, self.cornerRadius)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
+}
+//设置视图所有角幅度
+- (void)setAllCorner {
+    UIBezierPath *maskPath = nil;
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                          cornerRadius:self.cornerRadius];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
+}
+//去掉视图所有角幅度
+- (void)setNoneCorner {
+    self.layer.mask = nil;
+}
+
+
 @end
