@@ -48,4 +48,6 @@
 
 @property (nonatomic, strong) id userInfo;
 
+- (void)addTarget:(id)target action:(SEL)action;
+
 @end

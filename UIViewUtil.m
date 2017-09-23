@@ -161,4 +161,10 @@ static const void *userInfoAddress = &userInfoAddress;
     objc_setAssociatedObject(self, userInfoAddress, userInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (void)addTarget:(id)target action:(SEL)action {
+    [self setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
+    [self addGestureRecognizer:tapGesture];
+}
+
 @end
