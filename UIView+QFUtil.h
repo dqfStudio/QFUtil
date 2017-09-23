@@ -63,4 +63,10 @@
 - (void)setAllCorner;
 //去掉视图所有角幅度
 - (void)setNoneCorner;
+
+
+//根据视图生成图片
+- (UIImage *)createImage;
+- (UIImage *)createImageWithFrame:(CGRect)frame;
+
 @end

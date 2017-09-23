@@ -213,4 +213,26 @@ static const void *userInfoAddress = &userInfoAddress;
 }
 
 
+
+//根据视图生成图片
+- (UIImage *)createImage {
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext: context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
+- (UIImage *)createImageWithFrame:(CGRect)frame {
+    UIGraphicsBeginImageContextWithOptions(frame.size, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, -frame.origin.x, -frame.origin.y);
+    [self.layer renderInContext: context];
+    CGContextTranslateCTM(context, frame.origin.x, frame.origin.y);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
 @end
