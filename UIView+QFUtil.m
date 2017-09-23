@@ -191,17 +191,17 @@ static const void *userInfoAddress = &userInfoAddress;
     UIBezierPath *maskPath = nil;
     maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
                                      byRoundingCorners:corners
-                                           cornerRadii:CGSizeMake(self.cornerRadius, self.cornerRadius)];
+                                           cornerRadii:CGSizeMake(corners, corners)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
 }
 //设置视图所有角幅度
-- (void)setAllCorner {
+- (void)setAllCorner:(UIRectCorner)corners {
     UIBezierPath *maskPath = nil;
     maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                          cornerRadius:self.cornerRadius];
+                                          cornerRadius:corners];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
