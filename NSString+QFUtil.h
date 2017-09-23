@@ -1,5 +1,5 @@
 //
-//  NSStringUtil.h
+//  NSString+QFUtil.h
 //  TestProj
 //
 //  Created by dqf on 2017/8/10.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (Util)
+@interface NSString (QFUtil)
 
 + (NSString *(^)(id))append;
 - (NSString *(^)(id))append;

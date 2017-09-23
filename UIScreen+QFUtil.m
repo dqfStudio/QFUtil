@@ -1,14 +1,14 @@
 //
-//  UIScreenUtil.m
+//  UIScreen+QFUtil.m
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
 //  Copyright © 2017年 hisun. All rights reserved.
 //
 
-#import "UIScreenUtil.h"
+#import "UIScreen+QFUtil.h"
 
-@implementation UIScreen (Util)
+@implementation UIScreen (QFUtil)
 
 + (CGSize)size {
     return [UIScreen mainScreen].bounds.size;

@@ -1,16 +1,18 @@
 //
-//  UIViewUtil.m
+//  UIView+QFUtil.m
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
 //  Copyright © 2017年 hisun. All rights reserved.
 //
 
-#import "UIViewUtil.h"
+#import "UIView+QFUtil.h"
+#import <objc/runtime.h>
+#import "UIScreen+QFUtil.h"
 
 static const void *userInfoAddress = &userInfoAddress;
 
-@implementation UIView (Util)
+@implementation UIView (QFUtil)
 
 - (CGFloat)x {
     return self.frame.origin.x;
@@ -151,13 +153,11 @@ static const void *userInfoAddress = &userInfoAddress;
 
 
 
-- (id)userInfo
-{
+- (id)userInfo {
     return objc_getAssociatedObject(self, userInfoAddress);
 }
 
-- (void)setUserInfo:(id)userInfo
-{
+- (void)setUserInfo:(id)userInfo {
     objc_setAssociatedObject(self, userInfoAddress, userInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 

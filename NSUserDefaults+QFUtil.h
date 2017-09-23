@@ -1,5 +1,5 @@
 //
-//  NSUserDefaultsUtil.h
+//  NSUserDefaults+QFUtil.h
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSUserDefaults (Util)
+@interface NSUserDefaults (QFUtil)
 
 + (void)setUserIdentity:(NSString *_Nullable)objc;
 + (nullable id)getUserIdentity;

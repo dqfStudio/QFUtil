@@ -7,7 +7,7 @@
 //
 
 #import "UIColor+QFUtil.h"
-#import "NSStringUtil.h"
+#import "NSString+QFUtil.h"
 
 @implementation UIColor (QFUtil)
 

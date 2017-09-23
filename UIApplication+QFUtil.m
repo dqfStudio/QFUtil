@@ -1,15 +1,15 @@
 
 //
-//  UIApplicationUtil.m
+//  UIApplication+QFUtil.m
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
 //  Copyright © 2017年 hisun. All rights reserved.
 //
 
-#import "UIApplicationUtil.h"
+#import "UIApplication+QFUtil.h"
 
-@implementation UIApplication (Util)
+@implementation UIApplication (QFUtil)
 
 + (AppDelegate *)appDel {
     return (AppDelegate *)[UIApplication sharedApplication].delegate;

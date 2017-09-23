@@ -1,5 +1,5 @@
 //
-//  UIApplicationUtil.h
+//  UIApplication+QFUtil.h
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface UIApplication (Util)
+@interface UIApplication (QFUtil)
 
 //AppDelegate
 + (AppDelegate *)appDel;

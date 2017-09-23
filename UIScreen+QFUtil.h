@@ -1,5 +1,5 @@
 //
-//  UIScreenUtil.h
+//  UIScreen+QFUtil.h
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
@@ -15,7 +15,7 @@
 #define KWRatio     [UIScreen width]/KDWIDTH
 #define KHRatio     [UIScreen height]/KDHEIGHT
 
-@interface UIScreen (Util)
+@interface UIScreen (QFUtil)
 
 + (CGSize)size;
 + (CGFloat)height;

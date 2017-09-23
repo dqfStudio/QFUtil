@@ -1,5 +1,5 @@
 //
-//  UIViewUtil.h
+//  UIView+QFUtil.h
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIScreenUtil.h"
 
-@interface UIView (Util)
+@interface UIView (QFUtil)
 
 #pragma mark - position
 

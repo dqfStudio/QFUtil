@@ -1,5 +1,5 @@
 //
-//  UINavigationControllerUtil.h
+//  UINavigationController+QFUtil.h
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationController (Util)
+@interface UINavigationController (QFUtil)
 
 - (BOOL)popToViewControllerOfClass:(Class)klass animated:(BOOL)animated;
 - (void)replaceTopViewController:(UIViewController *)vc animated:(BOOL)animated;

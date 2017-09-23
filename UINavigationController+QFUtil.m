@@ -1,14 +1,14 @@
 //
-//  UINavigationControllerUtil.m
+//  UINavigationController+QFUtil.m
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
 //  Copyright © 2017年 hisun. All rights reserved.
 //
 
-#import "UINavigationControllerUtil.h"
+#import "UINavigationController+QFUtil.h"
 
-@implementation UINavigationController (Util)
+@implementation UINavigationController (QFUtil)
 
 - (BOOL)popToViewControllerOfClass:(Class)klass animated:(BOOL)animated {
     BOOL success = NO;

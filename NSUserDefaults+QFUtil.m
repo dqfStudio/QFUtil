@@ -1,18 +1,18 @@
 //
-//  NSUserDefaultsUtil.m
+//  NSUserDefaults+QFUtil.m
 //  MeTa
 //
 //  Created by dqf on 2017/8/29.
 //  Copyright © 2017年 hisun. All rights reserved.
 //
 
-#import "NSUserDefaultsUtil.h"
+#import "NSUserDefaults+QFUtil.h"
 
 #define KUserDefaultsKey       @"ud_user_defaults_id"
 #define KUserFirstLaunchKey    @"ud_user_first_launch"
 #define KUserLoginKey          @"ud_user_login"
 
-@implementation NSUserDefaults (Util)
+@implementation NSUserDefaults (QFUtil)
 
 + (void)setUserIdentity:(NSString *)objc {
     if (objc) {
