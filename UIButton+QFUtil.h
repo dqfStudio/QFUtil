@@ -16,4 +16,9 @@
 - (void)setImage:(UIImage *)image;
 - (void)setBackgroundImage:(UIImage *)image;
 - (void)addTarget:(id)target action:(SEL)action;
+
+//图左文字右
+- (void)imageAndTextWithSpacing:(CGFloat)spacing;
+//图右文字左
+- (void)textAndImageWithSpacing:(CGFloat)spacing;
 @end
