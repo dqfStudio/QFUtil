@@ -10,7 +10,7 @@
 
 @interface NSUserDefaults (QFUtil)
 
-+ (void)setUserIdentity:(NSString *_Nullable)objc;
++ (void)setUserIdentity:(NSString *_Nullable)aString;
 + (nullable id)getUserIdentity;
 + (nullable instancetype)theCUserDefaults;
 
@@ -22,6 +22,6 @@
 
 + (void)setUserLogin;
 + (void)setUserLogout;
-+ (BOOL)isUserLogIn;
++ (BOOL)isUserLogin;
 
 @end

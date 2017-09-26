@@ -15,8 +15,8 @@
 
 @implementation NSUserDefaults (QFUtil)
 
-+ (void)setUserIdentity:(NSString *)objc {
-    if (objc) [[NSUserDefaults standardUserDefaults] setObject:objc forKey:KUserDefaultsKey];
++ (void)setUserIdentity:(NSString *)aString {
+    if (aString) [[NSUserDefaults standardUserDefaults] setObject:aString forKey:KUserDefaultsKey];
 }
 
 + (nullable id)getUserIdentity {
@@ -62,7 +62,7 @@
     }
 }
 
-+ (BOOL)isUserLogIn {
++ (BOOL)isUserLogin {
     if ([NSUserDefaults theCUserDefaults]) {
         return [[NSUserDefaults theCUserDefaults] boolForKey:KUserLoginKey];
     }
