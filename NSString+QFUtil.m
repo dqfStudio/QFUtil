@@ -7,6 +7,7 @@
 //
 
 #import "NSString+QFUtil.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (QFUtil)
 
@@ -184,6 +185,58 @@
         }
         return contain;
     };
+}
+
+@end
+
+
+@implementation NSString (QFCode)
+
+- (id)JSONValue {
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    id res = [NSJSONSerialization JSONObjectWithData:data
+                                             options:kNilOptions
+                                               error:&error];
+    if (error) return nil;
+    else return res;
+}
+
+- (NSString *)trim {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+- (NSString *)md5 {
+    const char *concat_str = [self UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(concat_str, (CC_LONG)strlen(concat_str), result);
+    NSMutableString *hash = [NSMutableString string];
+    for (int i = 0; i < 16; i++){
+        [hash appendFormat:@"%02X", result[i]];
+    }
+    return hash;
+}
+
+- (NSString *)encode {
+    NSString *outputStr =
+    (NSString *) CFBridgingRelease(
+                                   CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                           (__bridge CFStringRef)self,
+                                                                           NULL,
+                                                                           (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                           kCFStringEncodingUTF8)
+                                   );
+    return outputStr;
+}
+
+- (NSString *)decode {
+    NSMutableString *outputStr = [NSMutableString stringWithString:self];
+    [outputStr replaceOccurrencesOfString:@"+"
+                               withString:@" "
+                                  options:NSLiteralSearch
+                                    range:NSMakeRange(0, [outputStr length])];
+    
+    return [outputStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end

@@ -44,3 +44,18 @@
 - (BOOL(^)(NSArray<NSString *> *))containsStrArr;
 
 @end
+
+
+@interface NSString (QFCode)
+
+- (id)JSONValue;
+
+- (NSString *)trim;
+
+- (NSString *)md5;
+
+- (NSString *)encode;
+
+- (NSString *)decode;
+
+@end
