@@ -1,5 +1,5 @@
 //
-//  NSString+QFUtil.m
+//  NSStringUtil.m
 //  TestProj
 //
 //  Created by dqf on 2017/8/10.
@@ -84,6 +84,18 @@
 - (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
         return self.appendCount(@"\n", count);
+    };
+}
+
+- (NSString *(^)(NSUInteger))substringToIndex {
+    return ^NSString *(NSUInteger to) {
+        return [self substringToIndex:to];
+    };
+}
+
+- (NSString *(^)(NSUInteger))substringFromIndex {
+    return ^NSString *(NSUInteger from) {
+        return [self substringFromIndex:from];
     };
 }
 

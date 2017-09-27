@@ -1,5 +1,5 @@
 //
-//  NSString+QFUtil.h
+//  NSStringUtil.h
 //  TestProj
 //
 //  Created by dqf on 2017/8/10.
@@ -26,6 +26,9 @@
 
 + (NSString *(^)(NSUInteger))wrap;
 - (NSString *(^)(NSUInteger))wrap;
+
+- (NSString *(^)(NSUInteger))substringToIndex;
+- (NSString *(^)(NSUInteger))substringFromIndex;
 
 - (NSString *(^)(NSString *))subStringToStart;
 - (NSString *(^)(NSString *))subStringToEnd;
