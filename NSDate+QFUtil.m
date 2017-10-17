@@ -13,7 +13,7 @@ static const NSDate *startDate=nil;
 @implementation NSDate (QFUtil)
 
 + (void)startTime {
-    startDate = [NSDate date];
+    startDate =  [NSDate date];
 }
 
 + (void)endTime {
