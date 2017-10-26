@@ -12,12 +12,9 @@
 
 - (BOOL)popToViewControllerOfClass:(Class)klass animated:(BOOL)animated {
     BOOL success = NO;
-    if (klass != NULL)
-    {
-        for (UIViewController *vc in self.viewControllers)
-        {
-            if ([vc isKindOfClass:klass])
-            {
+    if (klass != NULL) {
+        for (UIViewController *vc in self.viewControllers) {
+            if ([vc isKindOfClass:klass]) {
                 success = YES;
                 [self popToViewController:vc animated:animated];
                 break;
