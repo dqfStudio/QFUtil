@@ -47,7 +47,7 @@
 
 @property (nonatomic, strong) id userInfo;
 
-- (void)addTarget:(id)target action:(SEL)action;
+- (void)addTarget:(id)target gestureAction:(SEL)action;
 
 
 //设置视图上边角幅度
