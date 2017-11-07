@@ -7,6 +7,7 @@
 //
 
 #import "UIView+QFImage.h"
+#import <objc/runtime.h>
 
 @interface NSString (QFImage)
 - (NSString *(^)(id))append;
@@ -67,18 +68,17 @@
 - (void)allImagesToFolder:(NSString *)folderPath {
     NSString *subString = [folderPath substringFromIndex:folderPath.length-1];
     if (![subString isEqualToString:@"/"]) folderPath.append(@"/");
-    
+
     [self allSubViews:folderPath];
 }
 - (void)allSubViews:(NSString *)folderPath {
-    if (self.subviews.count > 0) {
-        for (int i=1; i<=self.subviews.count; i++) {
-            UIView *view = self.subviews[i-1];
-            [view allSubViews:folderPath];
-            NSString *string = [@(i) stringValue].append(@".png");
-            string = folderPath.append(string);
-            [[view createOneImage] toPath:string];
-        }
+    for (int i=0; i<self.subviews.count; i++) {
+        UIView *view = self.subviews[i];
+        NSString *string = [NSString stringWithFormat:@"%p.png", view];
+        string = folderPath.append(string);
+        UIImage *image = [view createOneImage];
+        [image toPath:string];
+        [view allSubViews:folderPath];
     }
 }
 @end
