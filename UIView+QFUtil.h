@@ -28,33 +28,6 @@
 
 #pragma mark - Frame
 
-@property (nonatomic, readwrite) CGFloat x;
-@property (nonatomic, readwrite) CGFloat y;
-@property (nonatomic, readwrite) CGFloat width;
-@property (nonatomic, readwrite) CGFloat height;
-
-
-@property (nonatomic, readwrite) CGPoint origin;
-@property (nonatomic, readwrite) CGSize  size;
-
-
-@property (nonatomic, readwrite) CGFloat centerX;
-@property (nonatomic, readwrite) CGFloat centerY;
-
-
-@property (nonatomic, readonly)  CGFloat  minX;
-@property (nonatomic, readonly)  CGFloat  minY;
-
-
-@property (nonatomic, readonly)  CGFloat  midX;
-@property (nonatomic, readonly)  CGFloat  midY;
-
-
-@property (nonatomic, readonly)  CGFloat  maxX;
-@property (nonatomic, readonly)  CGFloat  maxY;
-
-
-
 @property (nonatomic, readwrite) CGFloat x_yy;
 @property (nonatomic, readwrite) CGFloat y_yy;
 @property (nonatomic, readwrite) CGFloat width_yy;
