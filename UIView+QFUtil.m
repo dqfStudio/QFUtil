@@ -8,6 +8,9 @@
 
 #import "UIView+QFUtil.h"
 
+#define TIPS_IMAGE_VIEW_TAG 10000
+#define TIPS_LABEL_TAG 10001
+
 static const void *userInfoAddress = &userInfoAddress;
 
 @implementation UIView (QFUtil)
@@ -312,7 +315,7 @@ static const void *userInfoAddress = &userInfoAddress;
     if (!imageView) {
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     }
-    imageView.center = CGPointMake(self.yp_width / 2, self.yp_height / 2 - 40);
+    imageView.center = CGPointMake(self.width / 2, self.height / 2 - 40);
     imageView.contentMode = UIViewContentModeCenter;
     imageView.tag = TIPS_IMAGE_VIEW_TAG;
     [self addSubview:imageView];
@@ -361,7 +364,7 @@ static const void *userInfoAddress = &userInfoAddress;
 - (void)setAllCornerRadii:(CGFloat)radii {
     UIBezierPath *maskPath = nil;
     maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                          cornerRadius:corners];
+                                          cornerRadius:radii];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
