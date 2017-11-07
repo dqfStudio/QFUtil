@@ -126,19 +126,19 @@ static const void *userInfoAddress = &userInfoAddress;
 
 
 - (void)horizontalCenterWithWidth:(CGFloat)width {
-    self.x = ceilf((width - self.width) / 2);
+    self.x_yy = ceilf((width - self.width_yy) / 2);
 }
 
 - (void)verticalCenterWithHeight:(CGFloat)height {
-    self.y = ceilf((height - self.height) / 2);
+    self.y_yy = ceilf((height - self.height_yy) / 2);
 }
 
 - (void)verticalCenterInSuperView {
-    [self verticalCenterWithHeight:self.superview.height];
+    [self verticalCenterWithHeight:self.superview.height_yy];
 }
 
 - (void)horizontalCenterInSuperView {
-    [self horizontalCenterWithWidth:self.superview.width];
+    [self horizontalCenterWithWidth:self.superview.width_yy];
 }
 
 #pragma mark - Tap Gesture
@@ -230,7 +230,7 @@ static const void *userInfoAddress = &userInfoAddress;
 
 - (void)setBottomLineWithColor:(UIColor *)color paddingLeft:(CGFloat)paddingLeft paddingRight:(CGFloat)paddingRight {
     CGRect frame = CGRectMake(paddingLeft,
-                              self.height - ONE_PIXEL,
+                              self.height_yy - ONE_PIXEL,
                               [UIScreen mainScreen].bounds.size.width - paddingLeft- paddingRight,
                               ONE_PIXEL);
     if (!self.bottomLineLayer) {
@@ -319,14 +319,14 @@ static const void *userInfoAddress = &userInfoAddress;
     if (!imageView) {
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     }
-    imageView.center = CGPointMake(self.width / 2, self.height / 2 - 40);
+    imageView.center = CGPointMake(self.width_yy / 2, self.height_yy / 2 - 40);
     imageView.contentMode = UIViewContentModeCenter;
     imageView.tag = TIPS_IMAGE_VIEW_TAG;
     [self addSubview:imageView];
     
     UILabel *label = [self viewWithTag:TIPS_LABEL_TAG];
     if (!label) {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.maxY + 10, [UIScreen mainScreen].bounds.size.width, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.maxY_yy + 10, [UIScreen mainScreen].bounds.size.width, 20)];
     }
     label.font = [UIFont systemFontOfSize:16];
     label.textColor = textColor;
