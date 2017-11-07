@@ -121,6 +121,107 @@ static const void *userInfoAddress = &userInfoAddress;
     return CGRectGetMaxY(self.frame);
 }
 
+
+
+
+- (CGFloat)x_yy {
+    return self.frame.origin.x;
+}
+- (void)setX_yy:(CGFloat)x_yy {
+    CGRect frame = self.frame;
+    frame.origin.x = x_yy;
+    self.frame = frame;
+}
+
+- (CGFloat)y_yy {
+    return self.frame.origin.y;
+}
+- (void)setY_yy:(CGFloat)y_yy {
+    CGRect frame = self.frame;
+    frame.origin.y = y_yy;
+    self.frame = frame;
+}
+
+- (CGFloat)width_yy {
+    return self.frame.size.width;
+}
+- (void)setWidth_yy:(CGFloat)width_yy {
+    CGRect frame = self.frame;
+    frame.size.width = width_yy;
+    self.frame = frame;
+}
+
+- (CGFloat)height_yy {
+    return self.frame.size.height;
+}
+- (void)setHeight_yy:(CGFloat)height_yy {
+    CGRect frame = self.frame;
+    frame.size.height = height_yy;
+    self.frame = frame;
+}
+
+
+
+
+
+
+- (CGPoint)origin_yy {
+    return self.frame.origin;
+}
+- (void)setOrigin_yy:(CGPoint)origin_yy {
+    CGRect frame = self.frame;
+    frame.origin = origin_yy;
+    self.frame = frame;
+}
+
+- (CGSize)size_yy {
+    return self.frame.size;
+}
+- (void)setSize_yy:(CGSize)size_yy {
+    CGRect frame = self.frame;
+    frame.size = size_yy;
+    self.frame = frame;
+}
+
+- (CGFloat)centerX_yy {
+    return self.center.x;
+}
+- (void)setCenterX_yy:(CGFloat)centerX_yy {
+    self.center = CGPointMake(centerX_yy, self.center.y);
+}
+
+- (CGFloat)centerY_yy {
+    return self.center.y;
+}
+- (void)setCenterY_yy:(CGFloat)centerY_yy {
+    self.center = CGPointMake(self.center.x, centerY_yy);
+}
+
+- (CGFloat)minX_yy {
+    return CGRectGetMinX(self.frame);
+}
+- (CGFloat)minY_yy {
+    return CGRectGetMinY(self.frame);
+}
+
+- (CGFloat)midX_yy {
+    return CGRectGetMidX(self.frame);
+}
+- (CGFloat)midY_yy {
+    return CGRectGetMidY(self.frame);
+}
+
+- (CGFloat)maxX_yy {
+    return CGRectGetMaxX(self.frame);
+}
+- (CGFloat)maxY_yy {
+    return CGRectGetMaxY(self.frame);
+}
+
+
+
+
+
 - (void)horizontalCenterWithWidth:(CGFloat)width {
     self.x = ceilf((width - self.width) / 2);
 }
