@@ -68,11 +68,17 @@
     NSString *subString = [folderPath substringFromIndex:folderPath.length-1];
     if (![subString isEqualToString:@"/"]) folderPath.append(@"/");
     
-    for (int i=1; i<=self.subviews.count; i++) {
-        UIView *view = self.subviews[i-1];
-        NSString *string = [@(i) stringValue].append(@".png");
-        string = folderPath.append(string);
-        [[view createOneImage] toPath:string];
+    [self allSubViews:folderPath];
+}
+- (void)allSubViews:(NSString *)folderPath {
+    if (self.subviews.count > 0) {
+        for (int i=1; i<=self.subviews.count; i++) {
+            UIView *view = self.subviews[i-1];
+            [view allSubViews:folderPath];
+            NSString *string = [@(i) stringValue].append(@".png");
+            string = folderPath.append(string);
+            [[view createOneImage] toPath:string];
+        }
     }
 }
 @end
