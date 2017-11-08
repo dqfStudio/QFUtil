@@ -153,6 +153,10 @@
     return (info.kp_proc.p_flag & P_TRACED) ? YES : NO;
 }
 
++ (void)hideKeyboard {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
+
 + (void)call:(NSString *)phone {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", phone]]];
 }

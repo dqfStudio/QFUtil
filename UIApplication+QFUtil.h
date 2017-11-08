@@ -90,6 +90,8 @@ typedef NS_ENUM(NSInteger, YPNetworkStatus) {
  */
 + (BOOL)isBeingDebugged;
 
++ (void)hideKeyboard;
+
 + (void)call:(NSString *_Nullable)phone;
 
 + (void)openURLString:(NSString *_Nullable)URLString;
