@@ -11,6 +11,19 @@
 
 @implementation NSString (QFUtil)
 
+- (NSString *(^)(NSInteger))index {
+    return ^NSString *(NSInteger index) {
+        return self[index];
+    };
+}
+
+- (NSString *(^)(NSUInteger loc, NSUInteger len))range {
+    return ^NSString *(NSUInteger loc, NSUInteger len) {
+        NSRange range = NSMakeRange(loc, len);
+        return [self substringWithRange:range];
+    };
+}
+
 + (NSString *(^)(id))append {
     return ^NSString *(id obj) {
         return [NSString stringWithFormat:@"%@",obj];
@@ -88,46 +101,6 @@
     };
 }
 
-- (NSString *(^)(NSUInteger))substringToIndex {
-    return ^NSString *(NSUInteger to) {
-        return [self substringToIndex:to];
-    };
-}
-
-- (NSString *(^)(NSUInteger))substringFromIndex {
-    return ^NSString *(NSUInteger from) {
-        return [self substringFromIndex:from];
-    };
-}
-
-- (NSString *(^)(NSString *))subStringToStart {
-    return ^NSString *(NSString *aString) {
-        NSRange range = [self rangeOfString:aString];
-        return [self substringToIndex:range.location];
-    };
-}
-
-- (NSString *(^)(NSString *))subStringToEnd {
-    return ^NSString *(NSString *aString) {
-        NSRange range = [self rangeOfString:aString];
-        return [self substringToIndex:range.location+range.length];
-    };
-}
-
-- (NSString *(^)(NSString *))subStringFromStart {
-    return ^NSString *(NSString *aString) {
-        NSRange range = [self rangeOfString:aString];
-        return [self substringFromIndex:range.location];
-    };
-}
-
-- (NSString *(^)(NSString *))subStringFromEnd {
-    return ^NSString *(NSString *aString) {
-        NSRange range = [self rangeOfString:aString];
-        return [self substringFromIndex:range.location+range.length];
-    };
-}
-
 - (NSArray<NSString *> *(^)(NSString *))componentsByString {
     return ^NSArray<NSString *> *(NSString *separator) {
         return [self componentsSeparatedByString:separator];
@@ -185,6 +158,14 @@
         }
         return contain;
     };
+}
+
+- (NSString *)objectAtIndexedSubscript:(NSInteger)index {
+    if(index >= 0 && index < self.length) {
+        NSRange range = NSMakeRange(index, 1);
+        return [self substringWithRange:range];
+    }
+    return nil;
 }
 
 @end

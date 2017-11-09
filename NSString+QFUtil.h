@@ -11,6 +11,9 @@
 
 @interface NSString (QFUtil)
 
+- (NSString *(^)(NSInteger))index;
+- (NSString *(^)(NSUInteger loc, NSUInteger len))range;
+
 + (NSString *(^)(id))append;
 - (NSString *(^)(id))append;
 
@@ -28,21 +31,14 @@
 + (NSString *(^)(NSUInteger))wrap;
 - (NSString *(^)(NSUInteger))wrap;
 
-- (NSString *(^)(NSUInteger))substringToIndex;
-- (NSString *(^)(NSUInteger))substringFromIndex;
-
-- (NSString *(^)(NSString *))subStringToStart;
-- (NSString *(^)(NSString *))subStringToEnd;
-
-- (NSString *(^)(NSString *))subStringFromStart;
-- (NSString *(^)(NSString *))subStringFromEnd;
-
 - (NSArray<NSString *> *(^)(NSString *))componentsByString;
 - (NSArray<NSString *> *(^)(NSString *))componentsBySetString;
 - (NSArray<NSString *> *(^)(NSString *, NSString *))componentsByStringBySetString;
 
 - (BOOL(^)(NSString *))containsString;
 - (BOOL(^)(NSArray<NSString *> *))containsStrArr;
+
+- (NSString *)objectAtIndexedSubscript:(NSInteger)index;
 
 @end
 
