@@ -6,6 +6,7 @@
 //  Copyright © 2017年 dqfStudio. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface NSString (QFUtil)
@@ -57,5 +58,8 @@
 - (NSString *)encode;
 
 - (NSString *)decode;
+
+- (CGSize)sizeWithFont:(UIFont *)font constrainedSize:(CGSize)size;
+- (CGSize)sizeWithFont:(UIFont *)font;
 
 @end
