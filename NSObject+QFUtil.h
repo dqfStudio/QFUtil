@@ -19,4 +19,8 @@
 // property list of some class , it will iterate search
 + (NSArray *)depPPListOfClass:(Class)theClass;
 
++ (BOOL)isSystemClass:(Class)aClass;
+
+- (BOOL)isSystemClass:(Class)aClass;
+
 @end

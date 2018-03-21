@@ -47,4 +47,22 @@
     return depPPlist;
 }
 
++ (BOOL)isSystemClass:(Class)aClass {
+    NSBundle *bundle = [NSBundle bundleForClass:aClass];
+    if ([bundle isEqual:[NSBundle mainBundle]]) {
+        return NO;
+    }else {
+        return YES;
+    }
+}
+
+- (BOOL)isSystemClass:(Class)aClass {
+    NSBundle *bundle = [NSBundle bundleForClass:aClass];
+    if ([bundle isEqual:[NSBundle mainBundle]]) {
+        return NO;
+    }else {
+        return YES;
+    }
+}
+
 @end
