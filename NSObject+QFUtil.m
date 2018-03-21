@@ -65,4 +65,32 @@
     }
 }
 
++ (Class)seekToSystemClass:(Class)aClass {
+    
+    NSBundle *bundle = [NSBundle bundleForClass:aClass];
+    if ([bundle isEqual:[NSBundle mainBundle]]) {
+        if (aClass.superclass) {
+            return [self seekToSystemClass:aClass.superclass.class];
+        }
+    }else {
+        return aClass;
+    }
+    
+    return nil;
+}
+
+- (Class)seekToSystemClass:(Class)aClass {
+    
+    NSBundle *bundle = [NSBundle bundleForClass:aClass];
+    if ([bundle isEqual:[NSBundle mainBundle]]) {
+        if (aClass.superclass) {
+            return [self seekToSystemClass:aClass.superclass.class];
+        }
+    }else {
+        return aClass;
+    }
+    
+    return nil;
+}
+
 @end

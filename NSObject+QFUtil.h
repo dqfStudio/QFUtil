@@ -23,4 +23,8 @@
 
 - (BOOL)isSystemClass:(Class)aClass;
 
++ (Class)seekToSystemClass:(Class)aClass;
+
+- (Class)seekToSystemClass:(Class)aClass;
+
 @end
