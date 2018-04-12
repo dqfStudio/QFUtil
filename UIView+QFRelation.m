@@ -10,10 +10,10 @@
 
 @implementation UIView (Init)
 
-+ (instancetype)awakeWithNibName:(NSString *)name {
++ (instancetype)viewWithNibName:(NSString *)name {
     return [[[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil] firstObject];
 }
-+ (instancetype)awakeFromNib {
++ (instancetype)viewFromNib {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];
 }
 
