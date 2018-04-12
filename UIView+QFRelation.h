@@ -11,9 +11,9 @@
 @interface UIView (Init)
 
 //根据nib name返回UIView
-+ (instancetype)awakeWithNibName:(NSString *)name;
++ (instancetype)viewWithNibName:(NSString *)name;
 //根据nib创建一个view，nib name为ClassName
-+ (instancetype)awakeFromNib;
++ (instancetype)viewFromNib;
 
 @end
 
