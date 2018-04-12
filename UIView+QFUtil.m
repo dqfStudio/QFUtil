@@ -27,39 +27,39 @@ static const void *userInfoAddress = &userInfoAddress;
 
 #pragma mark - Frame
 
-- (CGFloat)x_yy {
+- (CGFloat)q_x {
     return self.frame.origin.x;
 }
-- (void)setX_yy:(CGFloat)x_yy {
+- (void)setQ_x:(CGFloat)q_x {
     CGRect frame = self.frame;
-    frame.origin.x = x_yy;
+    frame.origin.x = q_x;
     self.frame = frame;
 }
 
-- (CGFloat)y_yy {
+- (CGFloat)q_y {
     return self.frame.origin.y;
 }
-- (void)setY_yy:(CGFloat)y_yy {
+- (void)setQ_y:(CGFloat)q_y {
     CGRect frame = self.frame;
-    frame.origin.y = y_yy;
+    frame.origin.y = q_y;
     self.frame = frame;
 }
 
-- (CGFloat)width_yy {
+- (CGFloat)q_width {
     return self.frame.size.width;
 }
-- (void)setWidth_yy:(CGFloat)width_yy {
+- (void)setQ_width:(CGFloat)q_width {
     CGRect frame = self.frame;
-    frame.size.width = width_yy;
+    frame.size.width = q_width;
     self.frame = frame;
 }
 
-- (CGFloat)height_yy {
+- (CGFloat)q_height {
     return self.frame.size.height;
 }
-- (void)setHeight_yy:(CGFloat)height_yy {
+- (void)setQ_height:(CGFloat)q_height {
     CGRect frame = self.frame;
-    frame.size.height = height_yy;
+    frame.size.height = q_height;
     self.frame = frame;
 }
 
@@ -68,53 +68,53 @@ static const void *userInfoAddress = &userInfoAddress;
 
 
 
-- (CGPoint)origin_yy {
+- (CGPoint)q_origin {
     return self.frame.origin;
 }
-- (void)setOrigin_yy:(CGPoint)origin_yy {
+- (void)setQ_origin:(CGPoint)q_origin {
     CGRect frame = self.frame;
-    frame.origin = origin_yy;
+    frame.origin = q_origin;
     self.frame = frame;
 }
 
-- (CGSize)size_yy {
+- (CGSize)q_size {
     return self.frame.size;
 }
-- (void)setSize_yy:(CGSize)size_yy {
+- (void)setQ_size:(CGSize)q_size {
     CGRect frame = self.frame;
-    frame.size = size_yy;
+    frame.size = q_size;
     self.frame = frame;
 }
 
-- (CGFloat)centerX_yy {
+- (CGFloat)q_centerX {
     return self.center.x;
 }
-- (void)setCenterX_yy:(CGFloat)centerX_yy {
-    self.center = CGPointMake(centerX_yy, self.center.y);
+- (void)setQ_centerX:(CGFloat)q_centerX {
+    self.center = CGPointMake(q_centerX, self.center.y);
 }
 
-- (CGFloat)centerY_yy {
+- (CGFloat)q_centerY {
     return self.center.y;
 }
-- (void)setCenterY_yy:(CGFloat)centerY_yy {
-    self.center = CGPointMake(self.center.x, centerY_yy);
+- (void)setQ_centerY:(CGFloat)q_centerY {
+    self.center = CGPointMake(self.center.x, q_centerY);
 }
 
-- (CGFloat)minX_yy {
+- (CGFloat)q_minX {
     return CGRectGetMinX(self.frame);
 }
-- (CGFloat)minY_yy {
+- (CGFloat)q_minY {
     return CGRectGetMinY(self.frame);
 }
 
-- (CGFloat)midX_yy {
+- (CGFloat)q_midX {
     return CGRectGetMidX(self.frame);
 }
-- (CGFloat)midY_yy {
+- (CGFloat)q_midY {
     return CGRectGetMidY(self.frame);
 }
 
-- (CGFloat)maxX_yy {
+- (CGFloat)q_maxX {
     return CGRectGetMaxX(self.frame);
 }
 - (CGFloat)maxY_yy {
@@ -122,19 +122,19 @@ static const void *userInfoAddress = &userInfoAddress;
 }
 
 - (void)fillScreenWidth {
-    [self setWidth_yy:CGRectGetWidth([UIScreen mainScreen].bounds)];
+    [self setQ_width:CGRectGetWidth([UIScreen mainScreen].bounds)];
 }
 
 - (void)fillScreenHeight {
-    [self setHeight_yy:CGRectGetHeight([UIScreen mainScreen].bounds)];
+    [self setQ_height:CGRectGetHeight([UIScreen mainScreen].bounds)];
 }
 
 - (void)fillSuperX {
-    [self setX_yy:CGRectGetMinX(self.superview.frame)];
+    [self setQ_x:CGRectGetMinX(self.superview.frame)];
 }
 
 - (void)fillSuperY {
-    [self setY_yy:CGRectGetMinY(self.superview.frame)];
+    [self setQ_y:CGRectGetMinY(self.superview.frame)];
 }
 
 - (void)fillSuperOrigin {
@@ -143,11 +143,11 @@ static const void *userInfoAddress = &userInfoAddress;
 }
 
 - (void)fillSuperWidth {
-    [self setWidth_yy:CGRectGetWidth(self.superview.frame)];
+    [self setQ_width:CGRectGetWidth(self.superview.frame)];
 }
 
 - (void)fillSuperHeight {
-    [self setHeight_yy:CGRectGetHeight(self.superview.frame)];
+    [self setQ_height:CGRectGetHeight(self.superview.frame)];
 }
 
 - (void)fillSuperSize {
