@@ -1,21 +1,16 @@
 //
-//  NSObject+QFSafeUtil.h
+//  NSDictionary+QFSafeUtil.h
 //  TestProject
 //
-//  Created by dqf on 2017/9/28.
+//  Created by dqf on 2017/9/29.
 //  Copyright © 2017年 dqfStudio. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface NSArray (QFSafeUtil)
-@end
-
-@interface NSMutableArray (QFSafeUtil)
-@end
+#import "NSObject+QFSwizzleUtil.h"
 
 @interface NSDictionary (QFSafeUtil)
 @end
 
 @interface NSMutableDictionary (QFSafeUtil)
 @end
+
