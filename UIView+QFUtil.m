@@ -117,7 +117,7 @@ static const void *userInfoAddress = &userInfoAddress;
 - (CGFloat)q_maxX {
     return CGRectGetMaxX(self.frame);
 }
-- (CGFloat)maxY_yy {
+- (CGFloat)q_maxY {
     return CGRectGetMaxY(self.frame);
 }
 
@@ -152,7 +152,7 @@ static const void *userInfoAddress = &userInfoAddress;
 
 - (void)fillSuperSize {
     [self fillSuperWidth];
-    [self fillHeight];
+    [self fillSuperHeight];
 }
 
 - (void)fillSuperFrame {
@@ -164,19 +164,19 @@ static const void *userInfoAddress = &userInfoAddress;
 
 
 - (void)horizontalCenterWithWidth:(CGFloat)width {
-    self.x_yy = ceilf((width - self.width_yy) / 2);
+    self.q_x = ceilf((width - self.q_width) / 2);
 }
 
 - (void)verticalCenterWithHeight:(CGFloat)height {
-    self.y_yy = ceilf((height - self.height_yy) / 2);
+    self.q_y = ceilf((height - self.q_height) / 2);
 }
 
 - (void)verticalCenterInSuperView {
-    [self verticalCenterWithHeight:self.superview.height_yy];
+    [self verticalCenterWithHeight:self.superview.q_height];
 }
 
 - (void)horizontalCenterInSuperView {
-    [self horizontalCenterWithWidth:self.superview.width_yy];
+    [self horizontalCenterWithWidth:self.superview.q_width];
 }
 
 #pragma mark - Tap Gesture
@@ -268,7 +268,7 @@ static const void *userInfoAddress = &userInfoAddress;
 
 - (void)setBottomLineWithColor:(UIColor *)color paddingLeft:(CGFloat)paddingLeft paddingRight:(CGFloat)paddingRight {
     CGRect frame = CGRectMake(paddingLeft,
-                              self.height_yy - ONE_PIXEL,
+                              self.q_height - ONE_PIXEL,
                               [UIScreen mainScreen].bounds.size.width - paddingLeft- paddingRight,
                               ONE_PIXEL);
     if (!self.bottomLineLayer) {
