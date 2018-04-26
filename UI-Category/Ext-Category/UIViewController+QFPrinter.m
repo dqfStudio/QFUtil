@@ -1,15 +1,15 @@
 //
-//  UIViewController+QFPrinter.m
+//  UIViewController+HPrinter.m
 //  TestProject
 //
 //  Created by dqf on 2017/7/5.
 //  Copyright © 2017年 dqfStudio. All rights reserved.
 //
 
-#import "UIViewController+QFPrinter.h"
+#import "UIViewController+HPrinter.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (QFPrinter)
+@implementation UIViewController (HPrinter)
 
 #if DEBUG
 + (void)load {
