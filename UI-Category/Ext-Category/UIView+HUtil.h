@@ -27,30 +27,30 @@
 
 #pragma mark - Frame
 
-@property (nonatomic, readwrite) CGFloat q_x;
-@property (nonatomic, readwrite) CGFloat q_y;
-@property (nonatomic, readwrite) CGFloat q_width;
-@property (nonatomic, readwrite) CGFloat q_height;
+@property (nonatomic, readwrite) CGFloat h_x;
+@property (nonatomic, readwrite) CGFloat h_y;
+@property (nonatomic, readwrite) CGFloat h_width;
+@property (nonatomic, readwrite) CGFloat h_height;
 
 
-@property (nonatomic, readwrite) CGPoint q_origin;
-@property (nonatomic, readwrite) CGSize  q_size;
+@property (nonatomic, readwrite) CGPoint h_origin;
+@property (nonatomic, readwrite) CGSize  h_size;
 
 
-@property (nonatomic, readwrite) CGFloat q_centerX;
-@property (nonatomic, readwrite) CGFloat q_centerY;
+@property (nonatomic, readwrite) CGFloat h_centerX;
+@property (nonatomic, readwrite) CGFloat h_centerY;
 
 
-@property (nonatomic, readonly)  CGFloat  q_minX;
-@property (nonatomic, readonly)  CGFloat  q_minY;
+@property (nonatomic, readonly)  CGFloat  h_minX;
+@property (nonatomic, readonly)  CGFloat  h_minY;
 
 
-@property (nonatomic, readonly)  CGFloat  q_midX;
-@property (nonatomic, readonly)  CGFloat  q_midY;
+@property (nonatomic, readonly)  CGFloat  h_midX;
+@property (nonatomic, readonly)  CGFloat  h_midY;
 
 
-@property (nonatomic, readonly)  CGFloat  q_maxX;
-@property (nonatomic, readonly)  CGFloat  q_maxY;
+@property (nonatomic, readonly)  CGFloat  h_maxX;
+@property (nonatomic, readonly)  CGFloat  h_maxY;
 
 - (void)fillScreenWidth;
 - (void)fillScreenHeight;

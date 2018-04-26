@@ -27,39 +27,39 @@ static const void *userInfoAddress = &userInfoAddress;
 
 #pragma mark - Frame
 
-- (CGFloat)q_x {
+- (CGFloat)h_x {
     return self.frame.origin.x;
 }
-- (void)setQ_x:(CGFloat)q_x {
+- (void)setH_x:(CGFloat)h_x {
     CGRect frame = self.frame;
-    frame.origin.x = q_x;
+    frame.origin.x = h_x;
     self.frame = frame;
 }
 
-- (CGFloat)q_y {
+- (CGFloat)h_y {
     return self.frame.origin.y;
 }
-- (void)setQ_y:(CGFloat)q_y {
+- (void)setH_y:(CGFloat)h_y {
     CGRect frame = self.frame;
-    frame.origin.y = q_y;
+    frame.origin.y = h_y;
     self.frame = frame;
 }
 
-- (CGFloat)q_width {
+- (CGFloat)h_width {
     return self.frame.size.width;
 }
-- (void)setQ_width:(CGFloat)q_width {
+- (void)setH_width:(CGFloat)h_width {
     CGRect frame = self.frame;
-    frame.size.width = q_width;
+    frame.size.width = h_width;
     self.frame = frame;
 }
 
-- (CGFloat)q_height {
+- (CGFloat)h_height {
     return self.frame.size.height;
 }
-- (void)setQ_height:(CGFloat)q_height {
+- (void)setH_height:(CGFloat)h_height {
     CGRect frame = self.frame;
-    frame.size.height = q_height;
+    frame.size.height = h_height;
     self.frame = frame;
 }
 
@@ -68,73 +68,73 @@ static const void *userInfoAddress = &userInfoAddress;
 
 
 
-- (CGPoint)q_origin {
+- (CGPoint)h_origin {
     return self.frame.origin;
 }
-- (void)setQ_origin:(CGPoint)q_origin {
+- (void)setH_origin:(CGPoint)h_origin {
     CGRect frame = self.frame;
-    frame.origin = q_origin;
+    frame.origin = h_origin;
     self.frame = frame;
 }
 
-- (CGSize)q_size {
+- (CGSize)h_size {
     return self.frame.size;
 }
-- (void)setQ_size:(CGSize)q_size {
+- (void)setH_size:(CGSize)h_size {
     CGRect frame = self.frame;
-    frame.size = q_size;
+    frame.size = h_size;
     self.frame = frame;
 }
 
-- (CGFloat)q_centerX {
+- (CGFloat)h_centerX {
     return self.center.x;
 }
-- (void)setQ_centerX:(CGFloat)q_centerX {
-    self.center = CGPointMake(q_centerX, self.center.y);
+- (void)setH_centerX:(CGFloat)h_centerX {
+    self.center = CGPointMake(h_centerX, self.center.y);
 }
 
-- (CGFloat)q_centerY {
+- (CGFloat)h_centerY {
     return self.center.y;
 }
-- (void)setQ_centerY:(CGFloat)q_centerY {
-    self.center = CGPointMake(self.center.x, q_centerY);
+- (void)setH_centerY:(CGFloat)h_centerY {
+    self.center = CGPointMake(self.center.x, h_centerY);
 }
 
-- (CGFloat)q_minX {
+- (CGFloat)h_minX {
     return CGRectGetMinX(self.frame);
 }
-- (CGFloat)q_minY {
+- (CGFloat)h_minY {
     return CGRectGetMinY(self.frame);
 }
 
-- (CGFloat)q_midX {
+- (CGFloat)h_midX {
     return CGRectGetMidX(self.frame);
 }
-- (CGFloat)q_midY {
+- (CGFloat)h_midY {
     return CGRectGetMidY(self.frame);
 }
 
-- (CGFloat)q_maxX {
+- (CGFloat)h_maxX {
     return CGRectGetMaxX(self.frame);
 }
-- (CGFloat)q_maxY {
+- (CGFloat)h_maxY {
     return CGRectGetMaxY(self.frame);
 }
 
 - (void)fillScreenWidth {
-    [self setQ_width:CGRectGetWidth([UIScreen mainScreen].bounds)];
+    [self setH_width:CGRectGetWidth([UIScreen mainScreen].bounds)];
 }
 
 - (void)fillScreenHeight {
-    [self setQ_height:CGRectGetHeight([UIScreen mainScreen].bounds)];
+    [self setH_height:CGRectGetHeight([UIScreen mainScreen].bounds)];
 }
 
 - (void)fillSuperX {
-    [self setQ_x:CGRectGetMinX(self.superview.frame)];
+    [self setH_x:CGRectGetMinX(self.superview.frame)];
 }
 
 - (void)fillSuperY {
-    [self setQ_y:CGRectGetMinY(self.superview.frame)];
+    [self setH_y:CGRectGetMinY(self.superview.frame)];
 }
 
 - (void)fillSuperOrigin {
@@ -143,11 +143,11 @@ static const void *userInfoAddress = &userInfoAddress;
 }
 
 - (void)fillSuperWidth {
-    [self setQ_width:CGRectGetWidth(self.superview.frame)];
+    [self setH_width:CGRectGetWidth(self.superview.frame)];
 }
 
 - (void)fillSuperHeight {
-    [self setQ_height:CGRectGetHeight(self.superview.frame)];
+    [self setH_height:CGRectGetHeight(self.superview.frame)];
 }
 
 - (void)fillSuperSize {
@@ -164,19 +164,19 @@ static const void *userInfoAddress = &userInfoAddress;
 
 
 - (void)horizontalCenterWithWidth:(CGFloat)width {
-    self.q_x = ceilf((width - self.q_width) / 2);
+    self.h_x = ceilf((width - self.h_width) / 2);
 }
 
 - (void)verticalCenterWithHeight:(CGFloat)height {
-    self.q_y = ceilf((height - self.q_height) / 2);
+    self.h_y = ceilf((height - self.h_height) / 2);
 }
 
 - (void)verticalCenterInSuperView {
-    [self verticalCenterWithHeight:self.superview.q_height];
+    [self verticalCenterWithHeight:self.superview.h_height];
 }
 
 - (void)horizontalCenterInSuperView {
-    [self horizontalCenterWithWidth:self.superview.q_width];
+    [self horizontalCenterWithWidth:self.superview.h_width];
 }
 
 #pragma mark - Tap Gesture
@@ -268,7 +268,7 @@ static const void *userInfoAddress = &userInfoAddress;
 
 - (void)setBottomLineWithColor:(UIColor *)color paddingLeft:(CGFloat)paddingLeft paddingRight:(CGFloat)paddingRight {
     CGRect frame = CGRectMake(paddingLeft,
-                              self.q_height - ONE_PIXEL,
+                              self.h_height - ONE_PIXEL,
                               [UIScreen mainScreen].bounds.size.width - paddingLeft- paddingRight,
                               ONE_PIXEL);
     if (!self.bottomLineLayer) {
@@ -355,14 +355,14 @@ static const void *userInfoAddress = &userInfoAddress;
     if (!imageView) {
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     }
-    imageView.center = CGPointMake(self.q_width / 2, self.q_height / 2 - 40);
+    imageView.center = CGPointMake(self.h_width / 2, self.h_height / 2 - 40);
     imageView.contentMode = UIViewContentModeCenter;
     imageView.tag = TIPS_IMAGE_VIEW_TAG;
     [self addSubview:imageView];
     
     UILabel *label = [self viewWithTag:TIPS_LABEL_TAG];
     if (!label) {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.q_maxY + 10, [UIScreen mainScreen].bounds.size.width, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.h_maxY + 10, [UIScreen mainScreen].bounds.size.width, 20)];
     }
     label.font = [UIFont systemFontOfSize:16];
     label.textColor = textColor;
