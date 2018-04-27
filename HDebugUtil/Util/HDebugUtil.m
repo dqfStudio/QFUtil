@@ -9,9 +9,6 @@
 #import "HDebugUtil.h"
 #import "AppDelegate.h"
 #import "HDebugView.h"
-#import "HNetworkDebug.h"
-#import "HTrackingPath.h"
-#import "HViewEvent.h"
 
 @interface HDebugUtil ()
 @property (nonatomic, strong) HDebugView *debugView;
@@ -40,9 +37,7 @@
 }
 
 - (void)initInstance {
-    [HNetworkDebug share];
-    [HTrackingPath share];
-    [HViewEvent share];
+    
 }
 
 - (UIWindow *)rootView {

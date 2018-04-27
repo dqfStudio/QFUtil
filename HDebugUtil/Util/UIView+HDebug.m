@@ -7,7 +7,7 @@
 //
 
 #import "UIView+HDebug.h"
-#import "HViewEvent.h"
+//#import "HViewEvent.h"
 
 @implementation UIView (HDebug)
 
@@ -34,9 +34,9 @@
         }
     }
     // 如果没有符合条件的子控件，那么就自己最适合处理
-    [[HViewEvent share] debug:^{
-        [self vcEvent];
-    }];
+//    [[HViewEvent share] debug:^{
+//        [self vcEvent];
+//    }];
     return self;
 }
 
